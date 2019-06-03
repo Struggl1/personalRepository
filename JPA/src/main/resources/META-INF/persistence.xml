@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <!--
+        持久化单元：
+            name:持久化单元名称
+            transaction-type：事务管理方式
+               JTA:分布式事务管理
+               RESOURCE_LOCAL：本地事务管理
+    -->
+    <persistence-unit name="myJpa" transaction-type="RESOURCE_LOCAL">
+        <!--jpa的实现方式-->
+        <!--数据库信息，可选配置：配置jpa实现方的配置信息-->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    </persistence-unit>
+</persistence>
