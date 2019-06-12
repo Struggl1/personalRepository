@@ -11,5 +11,24 @@
         <!--jpa的实现方式-->
         <!--数据库信息，可选配置：配置jpa实现方的配置信息-->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <!--数据库配置信息
+                用户名：javax.persistence.jdbc.user
+                密码：javax.persistence.jdbc.password
+                驱动：javax.persistence.jdbc.driver
+                地址：javax.persistence.jdbc.url
+            -->
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="song"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ssm"/>
+            <!--配置jpa实现方的配置信息（hibernate）-->
+            <property name="hibernate.show_sql" value="true"/>
+            <!--create:程序运行时创建数据库表（如果有表现删除，在进行创建）
+                update:程序运行时创建表，（如果有表不会创建表）
+                none:不会创建表
+            -->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+        </properties>
     </persistence-unit>
 </persistence>
