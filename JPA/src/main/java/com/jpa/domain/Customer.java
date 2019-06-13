@@ -6,6 +6,14 @@ import javax.persistence.*;
  * 配置映射关系
  *      实体类和表的映射关系
  *      实体类中属性和表中字段的映射关系
+ *      GeneratedValue:配置主键的生成策略
+ *          strategy
+ *              GenerationType.IDENTITY：自增 mysql
+ *                  底层数据库必须支持自动增长（底层数据库支持的自增方式对ID自增）
+ *              GenerationType.SEQUENCE:序列 oracle
+ *                  底层数据库必须支持序列
+ *              GenerationType.TABLE：jpa提供的一种机制，通过一张数据库表的形式完成主键的自增
+ *              AUTO:程序自动帮助生成主键生成策略
  */
 @Entity
 @Table(name = "cst_customer")
@@ -13,7 +21,7 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cust_id")
-    private String custID;
+    private Long custID;
     @Column(name = "cust_name")
     private String custName;
     @Column(name = "cust_source")
@@ -27,11 +35,11 @@ public class Customer {
     @Column(name = "cust_address")
     private String custAddress;
 
-    public String getCustID() {
+    public Long getCustID() {
         return custID;
     }
 
-    public void setCustID(String custID) {
+    public void setCustID(Long custID) {
         this.custID = custID;
     }
 
