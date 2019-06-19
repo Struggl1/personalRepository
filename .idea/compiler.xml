@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springDataJpa" />
         <module name="JPA" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="JPA" target="1.5" />
+      <module name="JPA" target="1.8" />
+      <module name="springDataJpa" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

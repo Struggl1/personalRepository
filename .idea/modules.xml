@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JPA/JPA.iml" filepath="$PROJECT_DIR$/JPA/JPA.iml" />
       <module fileurl="file://$PROJECT_DIR$/personalRepository.iml" filepath="$PROJECT_DIR$/personalRepository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springDataJpa/springDataJpa.iml" filepath="$PROJECT_DIR$/springDataJpa/springDataJpa.iml" />
     </modules>
   </component>
 </project>
