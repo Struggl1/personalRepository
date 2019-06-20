@@ -28,8 +28,8 @@ public class JpaTest {
         EntityTransaction ts = manager.getTransaction();
         ts.begin();
         Customer cust = new Customer();
-        cust.setCustName("大傻子");
-        cust.setCustIndustry("人事");
+        cust.setName("大傻子");
+        cust.setIndustry("人事");
         manager.persist(cust);
         ts.commit();
         manager.close();
@@ -76,7 +76,7 @@ public class JpaTest {
         EntityTransaction transaction = entityManger.getTransaction();
         transaction.begin();
         Customer reference = entityManger.getReference(Customer.class, 2l);
-        reference.setCustName("大笨蛋");
+        reference.setName("大笨蛋");
         entityManger.merge(reference);
         transaction.commit();
         entityManger.close();
