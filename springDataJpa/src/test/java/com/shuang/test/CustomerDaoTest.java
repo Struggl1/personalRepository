@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -55,5 +56,36 @@ public class CustomerDaoTest {
     public void testFindAll(){
         List<Customer> all = customerDao.findAll();
         System.out.println(all.toString());
+    }
+
+    /**
+     * 查询数量
+     */
+    @Test
+    public void testCount(){
+        long count = customerDao.count();
+        System.out.println(count);
+    }
+
+    /**
+     * 根据ID查询是否存在
+     */
+    @Test
+    public void testExists(){
+        boolean b = customerDao.existsById(1l);
+        System.out.println(b);
+    }
+
+    /**
+     * Transactional保证getone的正常执行
+     * findobe:em.find()        立即加载
+     * getone：em.getReference   延迟加载
+     *  返回的是冬天代理对象，什么时候用，什么时候查询
+     */
+    @Test
+    @Transactional
+    public void testGetone(){
+        Customer one = customerDao.getOne(1l);
+        System.out.println(one);
     }
 }
