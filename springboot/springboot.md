@@ -1,0 +1,12 @@
+**springboot中表单校验的技术特点**
+    1，springboot使用了Hibernate—validate校验框架
+    2,springboot表单数据校验步骤
+        在实体类中添加校验规则;@NotBlank
+        控制器中开启对数据的校验@Valid
+    3,其他校验规则：
+        @NotBlank:判断字符串是否为null或者是空串（去掉首尾的空格）
+        @NotEmpty：判断字符串是否为null或者是空串（不去掉首尾的空格）
+        @Length:判断字符串的长度（最大或者是最小）
+        @Min（判断数值最小值）
+        @Max（判断数值最大值）
+        @Email（判断邮箱是否合法）
