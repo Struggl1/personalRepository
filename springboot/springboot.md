@@ -26,3 +26,16 @@
             相比ControllerAdvice无法进行异常类型的传递
         自定义HandlerExceptionResolver类处理异常
             需要在全局异常处理类中实现HandlerExceptionResolver接口
+**springBoot整合Junit做单元测试**            
+**springboot热部署分为两种**
+    springLoader插件  
+        以maven插件的方式使用springLoader
+        使用spring-boot:run maven 进行启动
+        缺点：只对Java代码进行生效，但是对页面的修改就不能生效
+        这种方式的缺点是：springLoader热部署程序是在后台以进程的方式来运行，需要手动的关闭该进程
+    方式二：在项目中直接使用jar包的方式进行使用
+        把jar包添加到项目里面，然后使用命令-Javaagent:.\lib\springloaded.jar -noverify    
+    DevTools工具
+        springloader和devTools的区别
+            springloader在部署项目的时候使用的是热部署的方式  
+            DevTools在部署项目时使用的是重新部署的方式

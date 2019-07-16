@@ -20,7 +20,7 @@ import javax.validation.Valid;
 public class UsersController {
     @RequestMapping("/addUser")
     public String showPage(Users users){
-
+        System.out.println("12345678");
         return "addUser";
     }
 
