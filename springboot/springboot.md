@@ -39,3 +39,8 @@
         springloader和devTools的区别
             springloader在部署项目的时候使用的是热部署的方式  
             DevTools在部署项目时使用的是重新部署的方式
+**springBoot缓存技术**
+    springBoot整合Ehcache
+    springBoot整合spring data Redis 
+springBoot整合springdatajpa                
+            
